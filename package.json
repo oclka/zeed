@@ -2,7 +2,6 @@
   "name": "@oclka/zeed",
   "version": "0.0.0",
   "description": "A validation-aware data generation engine powered by Zod. Generate realistic, schema-compliant mock data with deterministic seeding, inter-field dependencies, relational integrity, and pluggable outputs — from JSON exports to mock HTTP servers and direct ORM seeding.",
-  "main": "index.js",
   "author": {
     "name": "OCLKA",
     "email": "bonjour@olcka.dev",
@@ -12,7 +11,8 @@
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "knip": "knip"
   },
   "keywords": [],
   "license": "ISC",
@@ -26,6 +26,7 @@
     "eslint-plugin-sonarjs": "^4.0.2",
     "eslint-plugin-unicorn": "^63.0.0",
     "globals": "^17.4.0",
+    "knip": "^6.0.6",
     "prettier": "^3.8.1",
     "tsup": "^8.5.1",
     "typescript": "^6.0.2",
