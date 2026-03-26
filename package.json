@@ -1,0 +1,17 @@
+{
+  "name": "@oclka/zeed",
+  "version": "0.0.0",
+  "description": "A validation-aware data generation engine powered by Zod. Generate realistic, schema-compliant mock data with deterministic seeding, inter-field dependencies, relational integrity, and pluggable outputs — from JSON exports to mock HTTP servers and direct ORM seeding.",
+  "main": "index.js",
+  "author": {
+    "name": "OCLKA",
+    "email": "bonjour@olcka.dev",
+    "url": "https://oclka.dev"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "packageManager": "pnpm@10.30.3"
+}
