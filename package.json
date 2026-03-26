@@ -1,17 +1,89 @@
 {
   "name": "@oclka/zeed",
   "version": "0.0.0",
+  "private": true,
   "description": "A validation-aware data generation engine powered by Zod. Generate realistic, schema-compliant mock data with deterministic seeding, inter-field dependencies, relational integrity, and pluggable outputs — from JSON exports to mock HTTP servers and direct ORM seeding.",
-  "main": "index.js",
   "author": {
     "name": "OCLKA",
     "email": "bonjour@olcka.dev",
     "url": "https://oclka.dev"
   },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "test": "vitest run",
+    "test:watch": "vitest run --watch",
+    "test:coverage": "vitest run --coverage",
+    "test:mutate": "stryker run",
+    "test:mutate:only": "stryker run --mutate",
+    "check:types": "tsc --noEmit",
+    "check:pkg": "publint && attw --pack",
+    "check:secrets": "if command -v gitleaks > /dev/null; then gitleaks protect --staged --verbose; else echo '⚠️ gitleaks is not installed locally. Skipping secret scan.'; fi",
+    "size": "size-limit",
+    "check:all": "pnpm check:types && pnpm lint:fix && pnpm check:secrets && pnpm audit --audit-level=high && pnpm build && pnpm size && pnpm check:pkg && true",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "knip": "knip",
+    "prepare": "husky"
   },
   "keywords": [],
   "license": "ISC",
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.30.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@size-limit/preset-small-lib": "^12.0.1",
+    "@stryker-mutator/core": "^9.6.0",
+    "@stryker-mutator/typescript-checker": "^9.6.0",
+    "@stryker-mutator/vitest-runner": "^9.6.0",
+    "@types/node": "^25.5.0",
+    "@vitest/coverage-v8": "^4.1.2",
+    "commitlint": "^20.5.0",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-promise": "^7.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sonarjs": "^4.0.2",
+    "eslint-plugin-unicorn": "^63.0.0",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "knip": "^6.0.6",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
+    "publint": "^0.3.18",
+    "size": "^1.0.0",
+    "size-limit": "^12.0.1",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2",
+    "vitest": "^4.1.2"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ],
+    "*.{json,md,mdx,css,scss,less,html}": [
+      "prettier --write"
+    ]
+  }
 }
