@@ -1,0 +1,9 @@
+.git/**
+.stryker-tmp/**
+coverage/**
+dist/**
+docs/generated/**
+logs/**
+migrations/**
+node_modules/**
+pnpm-lock.yaml
