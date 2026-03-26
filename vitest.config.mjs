@@ -9,7 +9,6 @@ export default defineConfig({
     environment: 'node',
     timeout: 30_000,
     exclude: [
-      '**/.git/**',
       '**/.stryker-tmp/**',
       '**/dist/**',
       '**/docs/**',

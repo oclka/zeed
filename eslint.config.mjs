@@ -15,7 +15,6 @@ const eslintConfig = defineConfig([
   unicorn.configs['recommended'],
   prettier,
   globalIgnores([
-    '**/.git/**',
     '**/.stryker-tmp/**',
     '**/dist/**',
     '**/docs/**',

@@ -7,6 +7,7 @@ pr.md
 .windsurf
 
 .stryker-tmp/
+reports/
 
 # vscode
 .vscode/*
