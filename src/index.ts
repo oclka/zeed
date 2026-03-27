@@ -1,9 +1,5 @@
-export function main() {
-  console.log('zeed');
-}
+// --- Public Contracts & Interfaces ---
+export * from '@/types';
 
-/* v8 ignore start */
-if (process.env.NODE_ENV !== 'test') {
-  main();
-}
-/* v8 ignore end */
+// --- Error Classes ---
+export * from '@/errors';
