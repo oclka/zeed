@@ -214,7 +214,7 @@ We love contributions! Whether it's a bug fix, documentation improvement, or a n
     <a href="LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License" />
     </a>
-    <a href="https://github.com/oclka/atomic-config/issues">
+    <a href="https://github.com/oclka/zeed/issues">
       <img src="https://img.shields.io/badge/Bugs%20&%20Suggestions-blue.svg?style=flat" alt="Bugs & Suggestions" />
     </a>
   </sub><br>
