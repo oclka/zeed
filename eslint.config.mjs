@@ -3,6 +3,7 @@ import prettier from 'eslint-config-prettier';
 import promise from 'eslint-plugin-promise';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarJs from 'eslint-plugin-sonarjs';
+import tsdoc from 'eslint-plugin-tsdoc';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -33,6 +34,7 @@ const eslintConfig = defineConfig([
     },
     plugins: {
       'simple-import-sort': simpleImportSort,
+      tsdoc,
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
@@ -88,6 +90,13 @@ const eslintConfig = defineConfig([
       'sonarjs/no-hardcoded-ip': 'off',
       'unicorn/no-null': 'off',
       'unicorn/no-useless-undefined': 'off',
+    },
+  },
+  {
+    files: ['src/**/*.ts'],
+    plugins: { tsdoc },
+    rules: {
+      'tsdoc/syntax': 'warn',
     },
   },
 ]);
