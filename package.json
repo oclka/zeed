@@ -1,6 +1,6 @@
 {
   "name": "@oclka/zeed",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "A validation-aware data generation engine powered by Zod. Generate realistic, schema-compliant mock data with deterministic seeding, inter-field dependencies, relational integrity, and pluggable outputs — from JSON exports to mock HTTP servers and direct ORM seeding.",
   "author": {
