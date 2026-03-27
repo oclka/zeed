@@ -9,7 +9,7 @@ export default {
   timeoutMS: 240_000,
   timeoutFactor: 3,
   coverageAnalysis: 'perTest',
-  mutate: ['src/**/*.ts'],
+  mutate: ['src/**/*.ts', '!src/**/*.spec.ts', '!src/**/__tests__/**'],
   ignorePatterns: ['.agent', '.ops', '.windsurf', 'dist', 'coverage', 'node_modules', '.stryker-tmp'],
   thresholds: {
     high: 95,
